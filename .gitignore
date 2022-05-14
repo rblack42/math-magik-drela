@@ -1,0 +1,16 @@
+# Mac
+.DS_Store
+
+#Vim
+*~
+*.swp
+
+#Python
+__pycache__
+*.py[cod]
+.direnv
+
+#Fortram
+*.o
+*.a
+
