@@ -1,0 +1,9 @@
+# Table of contents
+
+format: jb-book
+root: intro
+chapters:
+- file: xfoil
+- file: xrotor
+- file: qprop
+- file: plotlib
