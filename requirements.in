@@ -4,3 +4,4 @@ jupyter-contrib-nbextensions
 git+https://github.com/mkrphys/ipython-tikzmagic.git
 fastapi
 uvicorn
+tortoise-orm

@@ -4,6 +4,8 @@
 #
 #    pip-compile
 #
+aiosqlite==0.17.0
+    # via tortoise-orm
 alabaster==0.7.12
     # via sphinx
 anyio==3.6.1
@@ -119,6 +121,8 @@ ipywidgets==7.7.0
     # via
     #   jupyter-sphinx
     #   myst-nb
+iso8601==1.1.0
+    # via tortoise-orm
 jedi==0.18.1
     # via ipython
 jinja2==3.0.3
@@ -291,12 +295,16 @@ pygments==2.12.0
     #   sphinx
 pyparsing==3.0.9
     # via packaging
+pypika-tortoise==0.1.6
+    # via tortoise-orm
 pyrsistent==0.18.1
     # via jsonschema
 python-dateutil==2.8.2
     # via jupyter-client
 pytz==2022.1
-    # via babel
+    # via
+    #   babel
+    #   tortoise-orm
 pyyaml==6.0
     # via
     #   jupyter-book
@@ -410,6 +418,8 @@ tornado==6.1
     #   nbdime
     #   notebook
     #   terminado
+tortoise-orm==0.19.2
+    # via -r requirements.in
 traitlets==5.2.0
     # via
     #   ipykernel
@@ -428,7 +438,9 @@ traitlets==5.2.0
     #   nbformat
     #   notebook
 typing-extensions==4.4.0
-    # via pydantic
+    # via
+    #   aiosqlite
+    #   pydantic
 uc-micro-py==1.0.1
     # via linkify-it-py
 urllib3==1.26.9

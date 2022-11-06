@@ -48,3 +48,27 @@ run:
 nb:
 	cd book && \
 		jupyter notebook
+
+.PHONY: docker_up
+docker_up:
+	docker-compose up -d --build
+
+.PHONY: docker_stop
+docker_stop:
+	docker-compose down
+
+.PHONY: docker_clean
+docker_clean:
+	docker system prune -a
+
+.PHONY: shell_db
+shell_db:
+	docker-compose exec web-db psql -U postgres
+
+.PHONY: db_logs
+db_logs:
+	docker-compose logs web-db
+
+.PHONY: test
+test:
+	docker-compose exec web python -m pytest
