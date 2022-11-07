@@ -67,14 +67,15 @@ shell_db:
 
 .PHONY: shell_web
 shell_web:
-	docker compose exec web root
+	docker-compose  exec -it web /bin/bash	
+	
 .PHONY: db_logs
 db_logs:
 	docker-compose logs web-db
 
 .PHONY: test
 test:
-	docker-compose exec web python -m pytest
+	docker-compose exec web python -m pytest -v
 
 .PHONY: web_log
 web_log:
