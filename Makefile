@@ -65,6 +65,9 @@ docker_clean:
 shell_db:
 	docker-compose exec web-db psql -U postgres
 
+.PHONY: shell_web
+shell_web:
+	docker compose exec web root
 .PHONY: db_logs
 db_logs:
 	docker-compose logs web-db
@@ -72,3 +75,7 @@ db_logs:
 .PHONY: test
 test:
 	docker-compose exec web python -m pytest
+
+.PHONY: web_log
+web_log:
+	docker-compose logs web
