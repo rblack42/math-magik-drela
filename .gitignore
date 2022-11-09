@@ -7,8 +7,8 @@
 
 #Python
 __pycache__
-*.py[cod]
-.direnv
+*.py[cod
+venv
 
 #Fortran
 *.o

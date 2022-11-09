@@ -3,7 +3,7 @@ XFOILTAR = xfoil6.99.tgz
 QPROPURL = https://web.mit.edu/drela/Public/web/qprop/
 QPROPTAR = qprop1.22.tar.gz
 
-# fetch copy of master XFoil and QProp codes from MIT
+# fetch copy of master XFoil and QProp codes from MIT ==========
 .PHONY: fetch
 fetch: master/$(QPROPTAR) master/$(XFOILTAR)
 
@@ -21,11 +21,10 @@ unpack:	 master/$(QPROPTAR) master/$(XFOILTAR)
 		tar zxvf $(QPROPTAR) && \
 		tar zxvf $(XFOILTAR)
 
-
+# Virtual environment with direnv ========================
 .PHONY: venv
 venv:
-	echo 'layout python3' > .envrc && \
-		direnv allow
+	python3 -m venv
 
 .PHONY: init
 init:
@@ -39,15 +38,22 @@ reqs:
 	jupyter contrib nbextensions install
 	cp ~/_sys/tikzmagic.py .direnv/python-3.10.8/lib/python3.10/site-packages
 
-.PHONY: run
-run:
-	cd project && \
-		uvicorn app.main:app --reload
+# jupyter book management ===================================================
+
+.PHONY: book
+book:
+	jb build book
 
 .PHONY: nb
 nb:
 	cd book && \
 		jupyter notebook
+
+# FastAPI/Docker management =================================================
+.PHONY: run
+run:
+	cd project && \
+		uvicorn app.main:app --reload
 
 .PHONY: docker_up
 docker_up:
