@@ -1,0 +1,9 @@
+FSRCS = qprop.o gvcalc.o cdfun.o tqcalc.o motor.o spline.o io.o qcget.o
+FOBJS = $(FSRCS:.f=.o)
+FC = gfortran
+
+qprop:$(FOBJS)
+    $(FC) $^ -o $@
+    
+%.o:    %.f
+    $(FC) -c $< -o $@
