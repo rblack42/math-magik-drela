@@ -3,8 +3,8 @@
 
 title: Mark Drela Tools
 author: Roie R. Black
-logo: logo.png
-
+logo: ../assets/images/lpp.gif
+  
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:

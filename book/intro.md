@@ -1,11 +1,6 @@
-# Welcome to your Jupyter Book
+# Refactoring Mark Drela's Tools
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
-
-Check out the content pages bundled with this sample book to see more.
+I an attempt to make Mark Drela's popular analysis tools more available to current users, this project will recast the core algorithms in Python and change the graphical interface to **matplotlib**.
 
 ```{tableofcontents}
 ```

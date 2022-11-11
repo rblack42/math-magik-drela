@@ -3,7 +3,11 @@
 format: jb-book
 root: intro
 chapters:
-- file: xfoil
-- file: xrotor
-- file: qprop
-- file: plotlib
+- file: xfoil/xfoil
+- file: qprop/qprop
+- file: qprop/qprop-algorithms
+- file: qprop/qprop_f
+- file: qprop/tqcalc_f
+- file: qprop/cdfun_f
+- file: qprop/gvcalc_f
+- file: qprop/spline_f

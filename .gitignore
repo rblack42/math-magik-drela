@@ -5,6 +5,8 @@
 *~
 *.swp
 
+# sphinx
+book/_build/
 #Python
 __pycache__
 *.py[cod
