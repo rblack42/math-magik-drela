@@ -4,6 +4,7 @@ wheel
 jupyter-book
 jupyter-contrib-nbextensions
 myst-nb
+sphinx-bibtex
 
 # TikZ extension ====================================
 git+https://github.com/mkrphys/ipython-tikzmagic.git

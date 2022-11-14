@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QProp Algorithms &#8212; Mark Drela Tools</title>
+    <title>bnsolv.f &#8212; Mark Drela Tools</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="qprop.f" href="qprop_f.html" />
-    <link rel="prev" title="QPROP: Propeller Analysis Code" href="qprop.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="io.f" href="io_f.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -109,8 +109,8 @@ const thebe_selector_output = ".output, .cell_output"
    QPROP: Propeller Analysis Code
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="qprop-algorithms.html">
    QProp Algorithms
   </a>
  </li>
@@ -149,8 +149,8 @@ const thebe_selector_output = ".output, .cell_output"
    io.f
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="bnsolv_f.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    bnsolv.f
   </a>
  </li>
@@ -200,9 +200,9 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/qprop/qprop-algorithms.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/qprop/bnsolv_f.rst"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -220,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/rblack42/math-magik-drela/issues/new?title=Issue%20on%20page%20%2Fqprop/qprop-algorithms.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/rblack42/math-magik-drela/issues/new?title=Issue%20on%20page%20%2Fqprop/bnsolv_f.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -236,41 +236,11 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/rblack42/math-magik-drela/master?urlpath=tree/docs/qprop/qprop-algorithms.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#qprop-f">
-   qprop.f
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -278,53 +248,179 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>QProp Algorithms</h1>
+                <h1>bnsolv.f</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#qprop-f">
-   qprop.f
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="qprop-algorithms">
-<h1>QProp Algorithms<a class="headerlink" href="#qprop-algorithms" title="Permalink to this headline">¶</a></h1>
-<p>In this section we will work through the <em>Qprop</em> source files and unwrap the basic algorithm from the code. The theory behind the program is described in one of the documents available on Drela’s MIT website, which is in the reference section of this project.</p>
-<p>As an experiment, <em>Python</em> code that implements the original <em>Fortran</em> code found in each file will be presented.</p>
-<div class="section" id="qprop-f">
-<h2>qprop.f<a class="headerlink" href="#qprop-f" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>hello from rst</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># qprop.f</span>
+  <div class="section" id="bnsolv-f">
+<h1>bnsolv.f<a class="headerlink" href="#bnsolv-f" title="Permalink to this headline">¶</a></h1>
+<p>This routine is basically just a block tridagonal solver. The algorithms are
+described in many textbooks and articles found online <span id="id1">[varah1972]</span>.</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span>C***********************************************************************
+C    Module:  bnsolv.f
+C 
+C    Copyright (C) 2005 Mark Drela 
+C 
+C    This program is free software; you can redistribute it and/or modify
+C    it under the terms of the GNU General Public License as published by
+C    the Free Software Foundation; either version 2 of the License, or
+C    (at your option) any later version.
+C
+C    This program is distributed in the hope that it will be useful,
+C    but WITHOUT ANY WARRANTY; without even the implied warranty of
+C    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+C    GNU General Public License for more details.
+C
+C    You should have received a copy of the GNU General Public License
+C    along with this program; if not, write to the Free Software
+C    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+C***********************************************************************
 
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="k">def</span> <span class="nf">qprop</span><span class="p">():</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+      SUBROUTINE BNSOLV(A,B,C,R,NB,N,NRHS,NRMAX)
+      DIMENSION A(NB,NB,N), B(NB,NB,N), C(NB,NB,N), R(NB,NRMAX,N)
+C     **********************************************************************
+C      This routine solves an N-long block-tridiagonal system with NBxNB
+C      blocks, and with NRHS righthand sides by a standard block elimination
+C      scheme.  The solutions are returned in the Rj vectors.
+C
+C      |A C      ||d|   |R..   |
+C      |B A C    ||d|   |R..   |
+C      |  B . .  ||.| = |R.....|
+C      |    . . C||.|   |R..   |
+C      |      B A||d|   |R..   |
+C                                                  Mark Drela   10 June 89
+C     **********************************************************************
+C
+CCC** Forward sweep: Elimination of lower block diagonal (B&#39;s).
+      DO 1 I=1, N
+C
+        IM = I-1
+C
+C------ don&#39;t eliminate first B block because it doesn&#39;t exist
+        IF(I.EQ.1) GO TO 12
+C
+C------ eliminate Bi block, thus modifying Ai and Ci blocks
+        DO 11 K=1, NB
+          DO 111 J=1, NB
+            BTMP = B(K,J,I)
+            DO 1111 L=1, NB
+              A(K,L,I) = A(K,L,I) - BTMP*C(J,L,IM)
+ 1111       CONTINUE
+            DO 1112 L=1, NRHS
+              R(K,L,I) = R(K,L,I) - BTMP*R(J,L,IM)
+ 1112       CONTINUE
+  111     CONTINUE
+   11   CONTINUE
+C
+C                                                              -1
+CCC---- multiply Ci block and righthand side Ri vectors by (Ai)
+C       using Gaussian elimination.
+C
+   12   DO 13 KPIV=1, NB-1
+          KP1 = KPIV+1
+C
+C-------- find max pivot index KX
+          KX = KPIV
+          DO 131 K=KP1, NB
+            IF(ABS(A(K,KPIV,I))-ABS(A(KX,KPIV,I))) 131,131,1311
+ 1311        KX = K
+  131     CONTINUE
+C
+          IF(A(KX,KPIV,I).EQ.0.0) THEN
+           WRITE(*,*) &#39;Singular A block, i = &#39;,I
+           STOP
+          ENDIF
+C
+          PIVOT = 1.0/A(KX,KPIV,I)
+C
+C-------- switch pivots
+          A(KX,KPIV,I) = A(KPIV,KPIV,I)
+C
+C-------- switch rows &amp; normalize pivot row
+          DO 132 L=KP1, NB
+            TEMP = A(KX,L,I)*PIVOT
+            A(KX,L,I) = A(KPIV,L,I)
+            A(KPIV,L,I) = TEMP
+  132     CONTINUE
+C
+          DO 133 L=1, NB
+            TEMP = C(KX,L,I)*PIVOT
+            C(KX,L,I) = C(KPIV,L,I)
+            C(KPIV,L,I) = TEMP
+  133     CONTINUE
+C
+          DO 134 L=1, NRHS
+            TEMP = R(KX,L,I)*PIVOT
+            R(KX,L,I) = R(KPIV,L,I)
+            R(KPIV,L,I) = TEMP
+  134     CONTINUE
+C
+C-------- forward eliminate everything
+          DO 135 K=KP1, NB
+            ATMP = A(K,KPIV,I)
+            DO 1351 L=KP1, NB
+              A(K,L,I) = A(K,L,I) - ATMP*A(KPIV,L,I)
+ 1351       CONTINUE
+            DO 1352 L=1, NB
+              C(K,L,I) = C(K,L,I) - ATMP*C(KPIV,L,I)
+ 1352       CONTINUE
+            DO 1353 L=1, NRHS
+              R(K,L,I) = R(K,L,I) - ATMP*R(KPIV,L,I)
+ 1353       CONTINUE
+  135     CONTINUE
+C
+   13   CONTINUE
+C
+C------ solve for last row
+        IF(A(NB,NB,I).EQ.0.0) THEN
+         WRITE(*,*) &#39;Singular A block, i = &#39;,I
+         STOP
+        ENDIF
+        PIVOT = 1.0/A(NB,NB,I)
+        DO 141 L=1, NB
+          C(NB,L,I) = C(NB,L,I)*PIVOT
+  141   CONTINUE
+        DO 142 L=1, NRHS
+          R(NB,L,I) = R(NB,L,I)*PIVOT
+  142   CONTINUE
+C
+C------ back substitute everything
+        DO 15 KPIV=NB-1, 1, -1
+          KP1 = KPIV+1
+          DO 151 K=KP1, NB
+            ATMP = A(KPIV,K,I)
+            DO 1511 L=1, NB
+              C(KPIV,L,I) = C(KPIV,L,I) - ATMP*C(K,L,I)
+ 1511       CONTINUE
+            DO 1512 L=1, NRHS
+              R(KPIV,L,I) = R(KPIV,L,I) - ATMP*R(K,L,I)
+ 1512       CONTINUE
+  151     CONTINUE
+   15   CONTINUE
+    1 CONTINUE
+C
+CCC** Backward sweep: Back substitution using upper block diagonal (Ci&#39;s).
+      DO 2 I=N-1, 1, -1
+        IP = I+1
+        DO 21 L=1, NRHS
+          DO 211 K=1, NB
+            DO 2111 J=1, NB
+              R(K,L,I) = R(K,L,I) - R(J,L,IP)*C(K,J,I)
+ 2111       CONTINUE
+  211     CONTINUE
+   21   CONTINUE
+    2 CONTINUE
+C
+      RETURN
+      END ! BNSOLV
 </pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 
@@ -353,17 +449,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="qprop.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="io_f.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">QPROP: Propeller Analysis Code</p>
+            <p class="prev-next-title">io.f</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="qprop_f.html" title="next page">
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">qprop.f</p>
+        <p class="prev-next-title">Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

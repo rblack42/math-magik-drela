@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>io.f &#8212; Mark Drela Tools</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="bnsolv.f" href="bnsolv_f.html" />
+    <link rel="prev" title="spline.f" href="spline_f.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/lpp.gif" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mark Drela Tools</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Refactoring Mark Drela’s Tools
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xfoil/xfoil.html">
+   XFoil - Airfoil Analysis Code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="qprop.html">
+   QPROP: Propeller Analysis Code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="qprop-algorithms.html">
+   QProp Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="qprop_f.html">
+   qprop.f
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="qcget_f.html">
+   qcget.f
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tqcalc_f.html">
+   tqcalc.f
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cdfun_f.html">
+   cdfun.f
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gvcalc_f.html">
+   gvcalc.f
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="spline_f.html">
+   spline.f
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   io.f
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bnsolv_f.html">
+   bnsolv.f
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/qprop/io_f.rst"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rblack42/math-magik-drela"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rblack42/math-magik-drela/issues/new?title=Issue%20on%20page%20%2Fqprop/io_f.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fread">
+   FREAD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rread">
+   RREAD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iread">
+   IREAD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getflt">
+   GETFLT
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>io.f</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fread">
+   FREAD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rread">
+   RREAD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iread">
+   IREAD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getflt">
+   GETFLT
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="io-f">
+<h1>io.f<a class="headerlink" href="#io-f" title="Permalink to this headline">¶</a></h1>
+<p>This file contains a number of utility fileinput routines used in other parts of the program:</p>
+<div class="section" id="fread">
+<h2>FREAD<a class="headerlink" href="#fread" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>FREAD</strong> routine
+..      literalinclude::        ../../master/Qprop/src/io.f</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">lines</dt>
+<dd class="field-odd"><p>21-45</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="rread">
+<h2>RREAD<a class="headerlink" href="#rread" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="iread">
+<h2>IREAD<a class="headerlink" href="#iread" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="getflt">
+<h2>GETFLT<a class="headerlink" href="#getflt" title="Permalink to this headline">¶</a></h2>
+<p>Here is the complete file listing:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="o">***********************************************************************</span><span class="w"></span>
+<span class="n">C</span><span class="w">    </span><span class="k">Module</span><span class="p">:</span><span class="w">  </span><span class="n">io</span><span class="p">.</span><span class="n">f</span><span class="w"></span>
+<span class="n">C</span><span class="w"> </span>
+<span class="n">C</span><span class="w">    </span><span class="n">Copyright</span><span class="w"> </span><span class="p">(</span><span class="n">C</span><span class="p">)</span><span class="w"> </span><span class="mi">2005</span><span class="w"> </span><span class="n">Mark</span><span class="w"> </span><span class="n">Drela</span><span class="w"> </span>
+<span class="n">C</span><span class="w"> </span>
+<span class="n">C</span><span class="w">    </span><span class="n">This</span><span class="w"> </span><span class="k">program is </span><span class="n">free</span><span class="w"> </span><span class="n">software</span><span class="p">;</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">redistribute</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="nb">and</span><span class="o">/</span><span class="nb">or </span><span class="n">modify</span><span class="w"></span>
+<span class="n">C</span><span class="w">    </span><span class="n">it</span><span class="w"> </span><span class="n">under</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">terms</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">GNU</span><span class="w"> </span><span class="n">General</span><span class="w"> </span><span class="k">Public </span><span class="n">License</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">published</span><span class="w"> </span><span class="n">by</span><span class="w"></span>
+<span class="n">C</span><span class="w">    </span><span class="n">the</span><span class="w"> </span><span class="n">Free</span><span class="w"> </span><span class="n">Software</span><span class="w"> </span><span class="n">Foundation</span><span class="p">;</span><span class="w"> </span><span class="n">either</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">License</span><span class="p">,</span><span class="w"> </span><span class="nb">or</span>
+<span class="n">C</span><span class="w">    </span><span class="p">(</span><span class="n">at</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">option</span><span class="p">)</span><span class="w"> </span><span class="nb">any </span><span class="n">later</span><span class="w"> </span><span class="n">version</span><span class="p">.</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="w">    </span><span class="n">This</span><span class="w"> </span><span class="k">program is </span><span class="n">distributed</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">hope</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">useful</span><span class="p">,</span><span class="w"></span>
+<span class="n">C</span><span class="w">    </span><span class="n">but</span><span class="w"> </span><span class="n">WITHOUT</span><span class="w"> </span><span class="nb">ANY </span><span class="n">WARRANTY</span><span class="p">;</span><span class="w"> </span><span class="n">without</span><span class="w"> </span><span class="n">even</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">implied</span><span class="w"> </span><span class="n">warranty</span><span class="w"> </span><span class="n">of</span><span class="w"></span>
+<span class="n">C</span><span class="w">    </span><span class="n">MERCHANTABILITY</span><span class="w"> </span><span class="nb">or </span><span class="n">FITNESS</span><span class="w"> </span><span class="n">FOR</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">PARTICULAR</span><span class="w"> </span><span class="n">PURPOSE</span><span class="p">.</span><span class="w">  </span><span class="n">See</span><span class="w"> </span><span class="n">the</span><span class="w"></span>
+<span class="n">C</span><span class="w">    </span><span class="n">GNU</span><span class="w"> </span><span class="n">General</span><span class="w"> </span><span class="k">Public </span><span class="n">License</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">details</span><span class="p">.</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="w">    </span><span class="n">You</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">received</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">copy</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">GNU</span><span class="w"> </span><span class="n">General</span><span class="w"> </span><span class="k">Public </span><span class="n">License</span><span class="w"></span>
+<span class="n">C</span><span class="w">    </span><span class="n">along</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="k">program</span><span class="p">;</span><span class="w"> </span><span class="k">if </span><span class="nb">not</span><span class="p">,</span><span class="w"> </span><span class="k">write </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Free</span><span class="w"> </span><span class="n">Software</span><span class="w"></span>
+<span class="n">C</span><span class="w">    </span><span class="n">Foundation</span><span class="p">,</span><span class="w"> </span><span class="n">Inc</span><span class="p">.,</span><span class="w"> </span><span class="mi">675</span><span class="w"> </span><span class="n">Mass</span><span class="w"> </span><span class="n">Ave</span><span class="p">,</span><span class="w"> </span><span class="n">Cambridge</span><span class="p">,</span><span class="w"> </span><span class="n">MA</span><span class="w"> </span><span class="mi">02139</span><span class="p">,</span><span class="w"> </span><span class="n">USA</span><span class="p">.</span><span class="w"></span>
+<span class="n">C</span><span class="o">***********************************************************************</span><span class="w"></span>
+
+<span class="w">      </span><span class="k">SUBROUTINE </span><span class="n">FREAD</span><span class="p">(</span><span class="n">LU</span><span class="p">,</span><span class="n">LINE</span><span class="p">,</span><span class="n">ILINE</span><span class="p">,</span><span class="n">IERR</span><span class="p">,</span><span class="w"> </span><span class="n">CVAL</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="kt">CHARACTER</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">LINE</span><span class="p">,</span><span class="w"> </span><span class="n">CVAL</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w"> </span><span class="mi">10</span><span class="w">   </span><span class="k">CONTINUE</span>
+<span class="k">      </span><span class="n">ILINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ILINE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">READ</span><span class="p">(</span><span class="n">LU</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="k">END</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="n">LINE</span><span class="w"></span>
+<span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="k">FORMAT</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="nb">INDEX</span><span class="p">(</span><span class="s1">&#39;#!&#39;</span><span class="p">,</span><span class="n">LINE</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="p">.</span><span class="n">NE</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">GO</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">LINE</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="w"> </span><span class="k">GO</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="n">KB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">INDEX</span><span class="p">(</span><span class="n">LINE</span><span class="p">,</span><span class="s1">&#39;!&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">KB</span><span class="p">.</span><span class="n">LE</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">KB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">LEN</span><span class="p">(</span><span class="n">LINE</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="n">CVAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LINE</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">KB</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="n">IERR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">      </span><span class="k">RETURN</span>
+<span class="n">C</span><span class="w"></span>
+<span class="w"> </span><span class="mi">80</span><span class="w">   </span><span class="n">IERR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">RETURN</span>
+<span class="n">C</span><span class="w"></span>
+<span class="w"> </span><span class="mi">90</span><span class="w">   </span><span class="n">IERR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">RETURN</span>
+<span class="k">      END</span>
+
+
+<span class="k">      SUBROUTINE </span><span class="n">RREAD</span><span class="p">(</span><span class="n">LU</span><span class="p">,</span><span class="n">LINE</span><span class="p">,</span><span class="n">ILINE</span><span class="p">,</span><span class="n">IERR</span><span class="p">,</span><span class="w"> </span><span class="n">NVAL</span><span class="p">,</span><span class="n">VAL</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="kt">CHARACTER</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">LINE</span><span class="w"></span>
+<span class="w">      </span><span class="kt">REAL </span><span class="n">VAL</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="kt">LOGICAL </span><span class="n">ERROR</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w"> </span><span class="mi">10</span><span class="w">   </span><span class="k">CONTINUE</span>
+<span class="k">      </span><span class="n">ILINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ILINE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">READ</span><span class="p">(</span><span class="n">LU</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="k">END</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="n">LINE</span><span class="w"></span>
+<span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="k">FORMAT</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="nb">INDEX</span><span class="p">(</span><span class="s1">&#39;#!&#39;</span><span class="p">,</span><span class="n">LINE</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="p">.</span><span class="n">NE</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">GO</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">LINE</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="w"> </span><span class="k">GO</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="n">KB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">INDEX</span><span class="p">(</span><span class="n">LINE</span><span class="p">,</span><span class="s1">&#39;!&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">KB</span><span class="p">.</span><span class="n">LE</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">KB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">LEN</span><span class="p">(</span><span class="n">LINE</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">CALL </span><span class="n">GETFLT</span><span class="p">(</span><span class="n">LINE</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">KB</span><span class="p">),</span><span class="n">VAL</span><span class="p">,</span><span class="n">NVAL</span><span class="p">,</span><span class="n">ERROR</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">ERROR</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="k">       </span><span class="n">IERR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">ELSE</span>
+<span class="k">       </span><span class="n">IERR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">      </span><span class="k">ENDIF</span>
+<span class="k">      RETURN</span>
+<span class="n">C</span><span class="w"></span>
+<span class="w"> </span><span class="mi">90</span><span class="w">   </span><span class="n">IERR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">RETURN</span>
+<span class="k">      END</span>
+
+
+
+<span class="k">      SUBROUTINE </span><span class="n">IREAD</span><span class="p">(</span><span class="n">LU</span><span class="p">,</span><span class="n">LINE</span><span class="p">,</span><span class="n">ILINE</span><span class="p">,</span><span class="n">IERR</span><span class="p">,</span><span class="w"> </span><span class="n">NVAL</span><span class="p">,</span><span class="n">IVAL</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="kt">CHARACTER</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">LINE</span><span class="w"></span>
+<span class="w">      </span><span class="kt">INTEGER </span><span class="n">IVAL</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="kt">LOGICAL </span><span class="n">ERROR</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w"> </span><span class="mi">10</span><span class="w">   </span><span class="k">CONTINUE</span>
+<span class="k">      </span><span class="n">ILINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ILINE</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">READ</span><span class="p">(</span><span class="n">LU</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="k">END</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="n">LINE</span><span class="w"></span>
+<span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="k">FORMAT</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="nb">INDEX</span><span class="p">(</span><span class="s1">&#39;#!&#39;</span><span class="p">,</span><span class="n">LINE</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="p">.</span><span class="n">NE</span><span class="p">.</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">GO</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">LINE</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="w"> </span><span class="k">GO</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="n">KB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">INDEX</span><span class="p">(</span><span class="n">LINE</span><span class="p">,</span><span class="s1">&#39;!&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">KB</span><span class="p">.</span><span class="n">LE</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">KB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">LEN</span><span class="p">(</span><span class="n">LINE</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">CALL </span><span class="n">GETINT</span><span class="p">(</span><span class="n">LINE</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">KB</span><span class="p">),</span><span class="n">IVAL</span><span class="p">,</span><span class="n">NVAL</span><span class="p">,</span><span class="n">ERROR</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">ERROR</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="k">       </span><span class="n">IERR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">ELSE</span>
+<span class="k">       </span><span class="n">IERR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">      </span><span class="k">ENDIF</span>
+<span class="k">      RETURN</span>
+<span class="n">C</span><span class="w"></span>
+<span class="w"> </span><span class="mi">90</span><span class="w">   </span><span class="n">IERR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">RETURN</span>
+<span class="k">      END</span>
+
+
+
+<span class="k">      SUBROUTINE </span><span class="n">GETFLT</span><span class="p">(</span><span class="n">INPUT</span><span class="p">,</span><span class="n">RNUM</span><span class="p">,</span><span class="n">NR</span><span class="p">,</span><span class="n">ERROR</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="kt">CHARACTER</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">INPUT</span><span class="w"></span>
+<span class="w">      </span><span class="kt">REAL </span><span class="n">RNUM</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="kt">LOGICAL </span><span class="n">ERROR</span><span class="w"></span>
+<span class="n">C</span><span class="o">----------------------------------------------------------------</span><span class="w"></span>
+<span class="n">C</span><span class="w">     </span><span class="n">Parses</span><span class="w"> </span><span class="kt">character </span><span class="n">string</span><span class="w"> </span><span class="n">INPUT</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="k">array</span>
+<span class="n">C</span><span class="w">     </span><span class="n">of</span><span class="w"> </span><span class="kt">real </span><span class="n">numbers</span><span class="w"> </span><span class="n">returned</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">RNUM</span><span class="p">(</span><span class="mf">1.</span><span class="p">.</span><span class="n">NR</span><span class="p">).</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="w">     </span><span class="n">Will</span><span class="w"> </span><span class="n">attempt</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">extract</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">than</span><span class="w"> </span><span class="n">NR</span><span class="w"> </span><span class="n">numbers</span><span class="p">,</span><span class="w"></span>
+<span class="n">C</span><span class="w">     </span><span class="n">unless</span><span class="w"> </span><span class="n">NR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="k">case all </span><span class="n">numbers</span><span class="w"> </span><span class="nb">present </span>
+<span class="n">C</span><span class="w">     </span><span class="n">in</span><span class="w"> </span><span class="n">INPUT</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">extracted</span><span class="p">.</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="w">     </span><span class="n">NR</span><span class="w"> </span><span class="n">returns</span><span class="w"> </span><span class="n">how</span><span class="w"> </span><span class="n">many</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="n">were</span><span class="w"> </span><span class="n">actually</span><span class="w"> </span><span class="n">extracted</span><span class="p">.</span><span class="w"></span>
+<span class="n">C</span><span class="o">----------------------------------------------------------------</span><span class="w"></span>
+<span class="w">      </span><span class="kt">CHARACTER</span><span class="o">*</span><span class="mi">1</span><span class="w"> </span><span class="n">TAB</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="n">TAB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="o">----</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">characters</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">examined</span><span class="w"></span>
+<span class="w">      </span><span class="n">ILEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">LEN</span><span class="p">(</span><span class="n">INPUT</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="o">----</span><span class="w"> </span><span class="n">ignore</span><span class="w"> </span><span class="n">everything</span><span class="w"> </span><span class="n">after</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="s2">&quot;!&quot;</span><span class="w"> </span><span class="kt">character</span>
+<span class="kt">      </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">INDEX</span><span class="p">(</span><span class="n">INPUT</span><span class="p">,</span><span class="s1">&#39;!&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">K</span><span class="p">.</span><span class="n">GT</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">ILEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">K</span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="o">----</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">limit</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="k">read</span>
+<span class="k">      </span><span class="n">NINP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NR</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">NINP</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">NINP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ILEN</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="n">NR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">ILEN</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">RETURN</span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="o">----</span><span class="w"> </span><span class="n">extract</span><span class="w"> </span><span class="n">numbers</span><span class="w"></span>
+<span class="w">      </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">      </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">DO </span><span class="mi">10</span><span class="w"> </span><span class="n">IPASS</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ILEN</span><span class="w"></span>
+<span class="n">C</span><span class="o">------</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="n">blank</span><span class="w"> </span><span class="nb">or </span><span class="n">tab</span><span class="w"> </span><span class="p">(</span><span class="n">pretend</span><span class="w"> </span><span class="n">there</span><span class="s1">&#39;s one after the end of the string)</span>
+<span class="s1">        KBLK = INDEX(INPUT(K:ILEN),&#39;</span><span class="w"> </span><span class="s1">&#39;) + K - 1</span>
+<span class="s1">        KTAB = INDEX(INPUT(K:ILEN),TAB) + K - 1</span>
+<span class="s1">C</span>
+<span class="s1">        IF(KBLK.EQ.K-1) KBLK = ILEN + 1</span>
+<span class="s1">        IF(KTAB.EQ.K-1) KTAB = ILEN + 1</span>
+<span class="s1">C</span>
+<span class="s1">        KSPACE = MIN( KBLK , KTAB )</span>
+<span class="s1">C</span>
+<span class="s1">        IF(KSPACE.EQ.K) THEN</span>
+<span class="s1">C------- just skip this space</span>
+<span class="s1">         K = K+1</span>
+<span class="s1">         GO TO 9</span>
+<span class="s1">        ENDIF</span>
+<span class="s1">C</span>
+<span class="s1">C------ also find next comma</span>
+<span class="s1">        KCOMMA = INDEX(INPUT(K:ILEN),&#39;</span><span class="p">,</span><span class="s1">&#39;) + K - 1</span>
+<span class="s1">        IF(KCOMMA.EQ.K-1) KCOMMA = ILEN + 1</span>
+<span class="s1">C</span>
+<span class="s1">C------ space is farther down, so we ran into something...</span>
+<span class="s1">        N = N+1</span>
+<span class="s1">C</span>
+<span class="s1">C------ bug out early if no more numbers are to be read</span>
+<span class="s1">        IF(N.GT.NINP) GO TO 11</span>
+<span class="s1">C</span>
+<span class="s1">C------ set ending delimiter position for this number</span>
+<span class="s1">        KDELIM = MIN(KSPACE,KCOMMA)</span>
+<span class="s1">C</span>
+<span class="s1">        IF(K.EQ.KDELIM) THEN</span>
+<span class="s1">C------- nothing but a comma... just keep looking</span>
+<span class="s1">         K = K+1</span>
+<span class="s1">         GO TO 9</span>
+<span class="s1">        ENDIF</span>
+<span class="s1">C</span>
+<span class="s1">C------ whatever we have, it is in substring K:KEND</span>
+<span class="s1">        KEND = KDELIM - 1</span>
+<span class="s1">        READ(INPUT(K:KEND),*,ERR=20) RNUM(N)</span>
+<span class="s1">        NR = N</span>
+<span class="s1">C</span>
+<span class="s1">C------ keep looking after delimiter</span>
+<span class="s1">        K = KDELIM + 1</span>
+<span class="s1">C</span>
+<span class="s1">  9     IF(K.GE.ILEN) GO TO 11</span>
+<span class="s1"> 10   CONTINUE</span>
+<span class="s1">C</span>
+<span class="s1">C---- normal return</span>
+<span class="s1"> 11   CONTINUE</span>
+<span class="s1">      ERROR = .FALSE.</span>
+<span class="s1">      RETURN</span>
+<span class="s1">C</span>
+<span class="s1">C---- bzzzt !!!</span>
+<span class="s1"> 20   CONTINUE</span>
+<span class="s1">ccc   WRITE(*,*) &#39;</span><span class="n">GETFLT</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">-</span><span class="n">directed</span><span class="w"> </span><span class="k">read </span><span class="n">error</span><span class="p">.</span><span class="s1">&#39;</span>
+<span class="s1">      ERROR = .TRUE.</span>
+<span class="s1">      RETURN</span>
+<span class="s1">      END ! GETFLT</span>
+
+
+
+<span class="s1">      SUBROUTINE GETINT(INPUT,A,N,ERROR)</span>
+<span class="s1">      CHARACTER*(*) INPUT</span>
+<span class="s1">      INTEGER A(*)</span>
+<span class="s1">      LOGICAL ERROR</span>
+<span class="s1">C----------------------------------------------------------</span>
+<span class="s1">C     Parses character string INPUT into an array</span>
+<span class="s1">C     of integer numbers returned in A(1...N)</span>
+<span class="s1">C</span>
+<span class="s1">C     Will attempt to extract no more than N numbers, </span>
+<span class="s1">C     unless N = 0, in which case all numbers present</span>
+<span class="s1">C     in INPUT will be extracted.</span>
+<span class="s1">C</span>
+<span class="s1">C     N returns how many numbers were actually extracted.</span>
+<span class="s1">C----------------------------------------------------------</span>
+<span class="s1">      CHARACTER*130 REC</span>
+<span class="s1">C</span>
+<span class="s1">C---- only first 128 characters in INPUT will be parsed</span>
+<span class="s1">      ILEN = MIN( LEN(INPUT) , 128 )</span>
+<span class="s1">      ILENP = ILEN + 2</span>
+<span class="s1">C</span>
+<span class="s1">C---- put input into local work string (which will be munched)</span>
+<span class="s1">      REC(1:ILENP) = INPUT(1:ILEN) // &#39;</span><span class="w"> </span><span class="p">,</span><span class="s1">&#39;</span>
+<span class="s1">C</span>
+<span class="s1">C---- ignore everything after a &quot;!&quot; character</span>
+<span class="s1">      K = INDEX(REC,&#39;</span><span class="c">!&#39;)</span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">K</span><span class="p">.</span><span class="n">GT</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">REC</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">ILEN</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">REC</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">K</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="n">NINP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="o">----</span><span class="w"> </span><span class="nb">count </span><span class="n">up</span><span class="w"> </span><span class="n">how</span><span class="w"> </span><span class="n">many</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">extracted</span><span class="w"></span>
+<span class="w">      </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">      </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">DO </span><span class="mi">10</span><span class="w"> </span><span class="n">IPASS</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ILEN</span><span class="w"></span>
+<span class="n">C</span><span class="o">------</span><span class="w"> </span><span class="n">search</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="n">space</span><span class="w"> </span><span class="nb">or </span><span class="n">comma</span><span class="w"> </span><span class="n">starting</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="nb">index </span><span class="n">K</span><span class="w"></span>
+<span class="w">        </span><span class="n">KSPACE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">INDEX</span><span class="p">(</span><span class="n">REC</span><span class="p">(</span><span class="n">K</span><span class="p">:</span><span class="n">ILENP</span><span class="p">),</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="n">KCOMMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">INDEX</span><span class="p">(</span><span class="n">REC</span><span class="p">(</span><span class="n">K</span><span class="p">:</span><span class="n">ILENP</span><span class="p">),</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">        </span><span class="k">IF</span><span class="p">(</span><span class="n">K</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="n">KSPACE</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="n">C</span><span class="o">-------</span><span class="w"> </span><span class="n">just</span><span class="w"> </span><span class="n">skip</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">space</span><span class="w"></span>
+<span class="w">         </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">K</span><span class="o">+</span><span class="mi">1</span><span class="w"></span>
+<span class="w">         </span><span class="k">GO</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="mi">9</span><span class="w"></span>
+<span class="w">        </span><span class="k">ENDIF</span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">        </span><span class="k">IF</span><span class="p">(</span><span class="n">K</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="n">KCOMMA</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="n">C</span><span class="o">-------</span><span class="w"> </span><span class="n">comma</span><span class="w"> </span><span class="n">found</span><span class="p">..</span><span class="w"> </span><span class="n">increment</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="nb">count and </span><span class="n">keep</span><span class="w"> </span><span class="n">looking</span><span class="w"></span>
+<span class="w">         </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="w"></span>
+<span class="w">         </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">K</span><span class="o">+</span><span class="mi">1</span><span class="w"></span>
+<span class="w">         </span><span class="k">GO</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="mi">9</span><span class="w"></span>
+<span class="w">        </span><span class="k">ENDIF</span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="o">------</span><span class="w"> </span><span class="n">neither</span><span class="w"> </span><span class="n">space</span><span class="w"> </span><span class="n">nor</span><span class="w"> </span><span class="n">comma</span><span class="w"> </span><span class="n">found</span><span class="p">,</span><span class="w"> </span><span class="n">so</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">ran</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">number</span><span class="p">...</span><span class="w"></span>
+<span class="n">C</span><span class="o">-</span><span class="w">    </span><span class="p">...</span><span class="n">increment</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="nb">and </span><span class="n">keep</span><span class="w"> </span><span class="n">looking</span><span class="w"> </span><span class="n">after</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="n">space</span><span class="w"> </span><span class="nb">or </span><span class="n">comma</span><span class="w"></span>
+<span class="w">        </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">MIN</span><span class="p">(</span><span class="n">KSPACE</span><span class="p">,</span><span class="n">KCOMMA</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">  </span><span class="mi">9</span><span class="w">     </span><span class="k">IF</span><span class="p">(</span><span class="n">K</span><span class="p">.</span><span class="n">GE</span><span class="p">.</span><span class="n">ILEN</span><span class="p">)</span><span class="w"> </span><span class="k">GO</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="mi">11</span><span class="w"></span>
+<span class="w"> </span><span class="mi">10</span><span class="w">   </span><span class="k">CONTINUE</span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="o">----</span><span class="w"> </span><span class="n">decide</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">how</span><span class="w"> </span><span class="n">many</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="k">read</span><span class="p">,</span><span class="w"> </span><span class="nb">and </span><span class="n">go</span><span class="w"> </span><span class="n">ahead</span><span class="w"> </span><span class="nb">and </span><span class="k">read </span><span class="n">them</span><span class="w"></span>
+<span class="w"> </span><span class="mi">11</span><span class="w">   </span><span class="k">IF</span><span class="p">(</span><span class="n">NINP</span><span class="p">.</span><span class="n">GT</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">MIN</span><span class="p">(</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">NINP</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">READ</span><span class="p">(</span><span class="n">REC</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">ILEN</span><span class="p">),</span><span class="o">*</span><span class="p">,</span><span class="n">ERR</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="n">I</span><span class="p">),</span><span class="n">I</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="n">ERROR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">FALSE</span><span class="p">.</span><span class="w"></span>
+<span class="w">      </span><span class="k">RETURN</span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="o">----</span><span class="w"> </span><span class="n">bzzzt</span><span class="w"> </span><span class="c">!!!</span>
+<span class="w"> </span><span class="mi">20</span><span class="w">   </span><span class="k">CONTINUE</span>
+<span class="n">ccc</span><span class="w">   </span><span class="k">WRITE</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;GETINT: String-to-integer conversion error.&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">      </span><span class="n">ERROR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">TRUE</span><span class="p">.</span><span class="w"></span>
+<span class="w">      </span><span class="k">RETURN</span>
+<span class="k">      END</span>
+
+
+
+
+
+<span class="k">      SUBROUTINE </span><span class="n">PPARSE</span><span class="p">(</span><span class="n">LINE</span><span class="p">,</span><span class="n">P1</span><span class="p">,</span><span class="n">P2</span><span class="p">,</span><span class="n">NP</span><span class="p">,</span><span class="n">IERR</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="kt">CHARACTER</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">LINE</span><span class="w"></span>
+<span class="n">C</span><span class="o">----------------------------------------------------</span><span class="w"></span>
+<span class="n">C</span><span class="w">     </span><span class="n">Extracts</span><span class="w"> </span><span class="k">sequence </span><span class="n">parameters</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">LINE</span><span class="p">,</span><span class="w"></span>
+<span class="n">C</span><span class="w">     </span><span class="n">which</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">formats</span><span class="p">:</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="w">       </span><span class="n">P1</span><span class="w"></span>
+<span class="n">C</span><span class="w">       </span><span class="n">P1</span><span class="p">,</span><span class="n">P2</span><span class="w"></span>
+<span class="n">C</span><span class="w">       </span><span class="n">P1</span><span class="p">,</span><span class="n">P2</span><span class="p">,</span><span class="n">DP</span><span class="w"></span>
+<span class="n">C</span><span class="w">       </span><span class="n">P1</span><span class="p">,</span><span class="n">P2</span><span class="o">/</span><span class="n">NP</span><span class="w"></span>
+<span class="n">C</span><span class="o">----------------------------------------------------</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">LEN</span><span class="p">(</span><span class="n">LINE</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="n">KCOMMA1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">INDEX</span><span class="p">(</span><span class="n">LINE</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="n">KSLASH</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nb">INDEX</span><span class="p">(</span><span class="n">LINE</span><span class="p">,</span><span class="s1">&#39;/&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">KCOMMA1</span><span class="p">.</span><span class="n">GT</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">AND</span><span class="p">.</span><span class="w"> </span><span class="n">KSLASH</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="k">       </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KCOMMA1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">       </span><span class="n">KCOMMA2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">INDEX</span><span class="p">(</span><span class="n">LINE</span><span class="p">(</span><span class="n">K</span><span class="p">:</span><span class="n">N</span><span class="p">),</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">ELSE</span>
+<span class="k">       </span><span class="n">KCOMMA2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">      </span><span class="k">ENDIF</span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="n">IERR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">KCOMMA1</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="n">C</span><span class="o">-----</span><span class="w"> </span><span class="k">only </span><span class="n">a</span><span class="w"> </span><span class="n">single</span><span class="w"> </span><span class="k">parameter is </span><span class="nb">present</span>
+<span class="nb">       </span><span class="k">READ</span><span class="p">(</span><span class="n">LINE</span><span class="p">,</span><span class="o">*</span><span class="p">,</span><span class="n">ERR</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="k">END</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="n">P1</span><span class="w"></span>
+<span class="w">       </span><span class="n">P2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">P1</span><span class="w"></span>
+<span class="w">       </span><span class="n">NP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">       </span><span class="k">RETURN</span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">ELSE</span>
+<span class="n">C</span><span class="o">-----</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="nb">or </span><span class="n">three</span><span class="w"> </span><span class="k">sequence </span><span class="n">parameters</span><span class="w"></span>
+<span class="w">       </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KCOMMA1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">       </span><span class="k">READ</span><span class="p">(</span><span class="n">LINE</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">K</span><span class="p">),</span><span class="o">*</span><span class="p">,</span><span class="n">ERR</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="k">END</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="n">P1</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">       </span><span class="k">IF</span><span class="p">(</span><span class="n">KCOMMA2</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="p">.</span><span class="nb">AND</span><span class="p">.</span><span class="w"> </span><span class="n">KSLASH</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="n">C</span><span class="o">------</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="k">parameter </span><span class="n">given</span><span class="w"></span>
+<span class="w">        </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KCOMMA1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="k">READ</span><span class="p">(</span><span class="n">LINE</span><span class="p">(</span><span class="n">K</span><span class="p">:</span><span class="n">N</span><span class="p">),</span><span class="o">*</span><span class="p">,</span><span class="n">ERR</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="k">END</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="n">P2</span><span class="w"></span>
+<span class="w">        </span><span class="k">IF</span><span class="p">(</span><span class="n">P1</span><span class="p">.</span><span class="n">EQ</span><span class="p">.</span><span class="n">P2</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="n">C</span><span class="o">-------</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="n">endpoints</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">given</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">zero</span><span class="w"> </span><span class="n">interval</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">steps</span><span class="w"></span>
+<span class="w">         </span><span class="n">NP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="k">ELSE</span>
+<span class="n">C</span><span class="o">-------</span><span class="w"> </span><span class="k">only </span><span class="n">two</span><span class="w"> </span><span class="n">endpoints</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">given</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">default</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">steps</span><span class="w"></span>
+<span class="w">         </span><span class="n">NP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
+<span class="w">        </span><span class="k">ENDIF</span>
+<span class="k">        RETURN</span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">       </span><span class="n">ELSEIF</span><span class="p">(</span><span class="n">KCOMMA2</span><span class="p">.</span><span class="n">NE</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="n">C</span><span class="o">------</span><span class="w"> </span><span class="n">interval</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="k">is </span><span class="n">given</span><span class="w"></span>
+<span class="w">        </span><span class="n">KA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KCOMMA1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="n">KB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KCOMMA2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="k">READ</span><span class="p">(</span><span class="n">LINE</span><span class="p">(</span><span class="n">KA</span><span class="p">:</span><span class="n">KB</span><span class="p">),</span><span class="o">*</span><span class="p">,</span><span class="n">ERR</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="k">END</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="n">P2</span><span class="w"></span>
+<span class="w">        </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KCOMMA2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="k">READ</span><span class="p">(</span><span class="n">LINE</span><span class="p">(</span><span class="n">K</span><span class="p">:</span><span class="n">N</span><span class="p">),</span><span class="o">*</span><span class="p">,</span><span class="n">ERR</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="k">END</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="n">PDEL</span><span class="w"></span>
+<span class="w">        </span><span class="n">RNUM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">P2</span><span class="o">-</span><span class="n">P1</span><span class="p">)</span><span class="o">/</span><span class="n">PDEL</span><span class="w"></span>
+<span class="w">        </span><span class="n">NP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">INT</span><span class="p">(</span><span class="w"> </span><span class="nb">ABS</span><span class="p">(</span><span class="n">RNUM</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.49</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">RETURN</span>
+<span class="n">C</span><span class="w">         </span>
+<span class="w">       </span><span class="n">ELSEIF</span><span class="p">(</span><span class="n">KSLASH</span><span class="p">.</span><span class="n">NE</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="k">        </span><span class="n">KA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KCOMMA1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="n">KB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KSLASH</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">READ</span><span class="p">(</span><span class="n">LINE</span><span class="p">(</span><span class="n">KA</span><span class="p">:</span><span class="n">KB</span><span class="p">),</span><span class="o">*</span><span class="p">,</span><span class="n">ERR</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="k">END</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="n">P2</span><span class="w"></span>
+<span class="w">        </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KSLASH</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="k">READ</span><span class="p">(</span><span class="n">LINE</span><span class="p">(</span><span class="n">K</span><span class="p">:</span><span class="n">N</span><span class="p">),</span><span class="o">*</span><span class="p">,</span><span class="n">ERR</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="k">END</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span><span class="w"> </span><span class="n">RNUM</span><span class="w"></span>
+<span class="w">        </span><span class="n">NP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">INT</span><span class="p">(</span><span class="w"> </span><span class="nb">ABS</span><span class="p">(</span><span class="n">RNUM</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.01</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">RETURN</span>
+<span class="k">       ENDIF</span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">ENDIF</span>
+<span class="n">C</span><span class="w"></span>
+<span class="w"> </span><span class="mi">80</span><span class="w">   </span><span class="k">CONTINUE</span>
+<span class="k">      </span><span class="n">IERR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">RETURN</span>
+<span class="n">C</span><span class="w"></span>
+<span class="w"> </span><span class="mi">90</span><span class="w">   </span><span class="k">CONTINUE</span>
+<span class="k">      </span><span class="n">IERR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">      </span><span class="k">RETURN</span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">END</span><span class="w"> </span><span class="c">! PPARSE</span>
+
+
+<span class="w">      </span><span class="k">SUBROUTINE </span><span class="n">GETARG0</span><span class="p">(</span><span class="n">IARG</span><span class="p">,</span><span class="n">ARG</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="o">------------------------------------------------</span><span class="w"></span>
+<span class="n">C</span><span class="w">     </span><span class="n">Same</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="nb">GETARG</span><span class="p">,</span><span class="w"> </span><span class="n">but</span><span class="p">...</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="w">     </span><span class="p">...</span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">case </span><span class="n">of</span><span class="w"> </span><span class="n">Intel</span><span class="w"> </span><span class="n">Fortran</span><span class="p">,</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">one</span><span class="w"></span>
+<span class="n">C</span><span class="w">     </span><span class="n">doesn</span><span class="s1">&#39;t barf if there&#39;</span><span class="n">s</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">Unix</span><span class="w"> </span><span class="n">argument</span><span class="w"> </span>
+<span class="n">C</span><span class="w">      </span><span class="p">(</span><span class="n">just</span><span class="w"> </span><span class="n">returns</span><span class="w"> </span><span class="n">blank</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">instead</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="o">------------------------------------------------</span><span class="w"></span>
+<span class="w">      </span><span class="kt">CHARACTER</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">ARG</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="n">NARG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">IARGC</span><span class="p">()</span><span class="w"></span>
+<span class="w">      </span><span class="k">IF</span><span class="p">(</span><span class="n">NARG</span><span class="p">.</span><span class="n">GE</span><span class="p">.</span><span class="n">IARG</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="k">       CALL </span><span class="nb">GETARG</span><span class="p">(</span><span class="n">IARG</span><span class="p">,</span><span class="n">ARG</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">ELSE</span>
+<span class="k">       </span><span class="n">ARG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"></span>
+<span class="w">      </span><span class="k">ENDIF</span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">RETURN</span>
+<span class="k">      END</span><span class="w"> </span><span class="c">! GETARG0</span>
+
+
+
+<span class="w">      </span><span class="k">SUBROUTINE </span><span class="n">STRIP</span><span class="p">(</span><span class="n">STRING</span><span class="p">,</span><span class="n">NS</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="kt">CHARACTER</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">STRING</span><span class="w"></span>
+<span class="n">C</span><span class="o">---------------------------------------------------</span><span class="w"></span>
+<span class="n">C</span><span class="w">     </span><span class="n">Strips</span><span class="w"> </span><span class="k">all </span><span class="n">blanks</span><span class="w"> </span><span class="n">off</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">STRING</span><span class="w"></span>
+<span class="n">C</span><span class="w">     </span><span class="nb">and </span><span class="n">returns</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">blank</span><span class="w"> </span><span class="n">part</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">STRING</span><span class="p">.</span><span class="w"></span>
+<span class="n">C</span><span class="w">     </span><span class="n">Returns</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">blank</span><span class="w"> </span><span class="n">part</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">NS</span><span class="p">.</span><span class="w"></span>
+<span class="n">C</span><span class="o">---------------------------------------------------</span><span class="w"></span>
+<span class="w">      </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">LEN</span><span class="p">(</span><span class="n">STRING</span><span class="p">)</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="o">----</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">last</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">blank</span><span class="w"> </span><span class="kt">character</span>
+<span class="kt">      </span><span class="k">DO </span><span class="n">NS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="k">IF</span><span class="p">(</span><span class="n">STRING</span><span class="p">(</span><span class="n">NS</span><span class="p">:</span><span class="n">NS</span><span class="p">).</span><span class="n">NE</span><span class="p">.</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="w"> </span><span class="k">GO</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="mi">11</span><span class="w"></span>
+<span class="w">      </span><span class="k">ENDDO</span>
+<span class="k">      </span><span class="n">NS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">      </span><span class="k">RETURN</span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="o">----</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="n">blank</span><span class="o">-</span><span class="n">stripping</span><span class="w"> </span><span class="n">loop</span><span class="w"></span>
+<span class="w">   </span><span class="mi">11</span><span class="w"> </span><span class="k">CONTINUE</span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="o">----</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">blank</span><span class="w"> </span><span class="kt">character </span><span class="n">before</span><span class="w"> </span><span class="n">NS</span><span class="w"></span>
+<span class="w">      </span><span class="k">DO </span><span class="n">K0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">NS</span><span class="w"></span>
+<span class="w">        </span><span class="k">IF</span><span class="p">(</span><span class="n">STRING</span><span class="p">(</span><span class="n">K0</span><span class="p">:</span><span class="n">K0</span><span class="p">).</span><span class="n">EQ</span><span class="p">.</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="w"> </span><span class="k">GO</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="mi">21</span><span class="w"></span>
+<span class="w">      </span><span class="k">ENDDO</span>
+<span class="k">      RETURN</span>
+<span class="k">   </span><span class="mi">21</span><span class="w"> </span><span class="k">CONTINUE</span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="o">----</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">non</span><span class="o">-</span><span class="n">blank</span><span class="w"> </span><span class="kt">character </span><span class="n">following</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">blank</span><span class="w"></span>
+<span class="w">      </span><span class="k">DO </span><span class="n">K1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">K0</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">NS</span><span class="w"></span>
+<span class="w">        </span><span class="k">IF</span><span class="p">(</span><span class="n">STRING</span><span class="p">(</span><span class="n">K1</span><span class="p">:</span><span class="n">K1</span><span class="p">).</span><span class="n">NE</span><span class="p">.</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="w"> </span><span class="k">GO</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="mi">31</span><span class="w"></span>
+<span class="w">      </span><span class="k">ENDDO</span>
+<span class="k">   </span><span class="mi">31</span><span class="w"> </span><span class="k">CONTINUE</span>
+<span class="n">C</span><span class="w"></span>
+<span class="n">C</span><span class="o">----</span><span class="w"> </span><span class="n">shift</span><span class="w"> </span><span class="n">STRING</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">remove</span><span class="w"> </span><span class="n">blank</span><span class="w"> </span><span class="n">segment</span><span class="w"></span>
+<span class="w">      </span><span class="n">NSDEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">K1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">K0</span><span class="w"></span>
+<span class="w">      </span><span class="n">STRING</span><span class="p">(</span><span class="n">K0</span><span class="p">:</span><span class="n">NS</span><span class="o">-</span><span class="n">NSDEL</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">STRING</span><span class="p">(</span><span class="n">K1</span><span class="p">:</span><span class="n">NS</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="n">NS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NS</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">NSDEL</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">GO</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="mi">11</span><span class="w"></span>
+<span class="n">C</span><span class="w"></span>
+<span class="w">      </span><span class="k">END</span><span class="w"> </span><span class="c">! STRIP</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./qprop"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="spline_f.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">spline.f</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="bnsolv_f.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">bnsolv.f</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Roie R. Black<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

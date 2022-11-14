@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"jax": ["input/TeX", "output/HTML-CSS"], "displayAlign": "left", "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="spline.f" href="spline_f.html" />
@@ -120,6 +122,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="qcget_f.html">
+   qcget.f
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="tqcalc_f.html">
    tqcalc.f
   </a>
@@ -137,6 +144,21 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="spline_f.html">
    spline.f
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="io_f.html">
+   io.f
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bnsolv_f.html">
+   bnsolv.f
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
   </a>
  </li>
 </ul>
@@ -221,6 +243,19 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#psi-iteration">
+   Psi Iteration
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -233,6 +268,19 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#psi-iteration">
+   Psi Iteration
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -241,7 +289,82 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="section" id="gvcalc-f">
 <h1>gvcalc.f<a class="headerlink" href="#gvcalc-f" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span>C***********************************************************************
+<p>This routine is the heart of the propeller performance calculation. The theory behind
+the calculations in this routine can be found in the <strong>qprop_theory.txt</strong> file
+available on the <em>QProp</em> website* [Qprop
+Theory]https://web.mit.edu/drela/Public/web/qprop/qprop_theory.pdf().</p>
+<p>Here are the input parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span>  <span class="n">Input</span>   <span class="n">CHORD</span>   <span class="n">local</span> <span class="n">blade</span> <span class="n">chord</span>
+<span class="n">C</span>          <span class="n">BETA</span>    <span class="n">local</span> <span class="n">blade</span> <span class="n">angle</span>  <span class="p">(</span><span class="n">radians</span><span class="p">)</span>
+<span class="n">C</span>          <span class="n">R</span>       <span class="n">local</span> <span class="n">radius</span>
+<span class="n">C</span>
+<span class="n">C</span>          <span class="n">BLDS</span>    <span class="n">number</span> <span class="n">of</span> <span class="n">blades</span>
+<span class="n">C</span>          <span class="n">RAD</span>     <span class="n">tip</span> <span class="n">radius</span>  <span class="p">(</span><span class="k">for</span> <span class="n">Prandtl</span><span class="s1">&#39;s factor)</span>
+<span class="n">C</span>          <span class="n">VEL</span>     <span class="n">forward</span> <span class="n">flight</span> <span class="n">speed</span>
+<span class="n">C</span>          <span class="n">OMG</span>     <span class="n">rotational</span> <span class="n">speed</span>  <span class="p">(</span><span class="n">radians</span><span class="o">/</span><span class="n">time</span><span class="p">)</span>
+<span class="n">C</span>          <span class="n">VSO</span>     <span class="n">speed</span> <span class="n">of</span> <span class="n">sound</span>
+<span class="n">C</span>
+<span class="n">C</span>          <span class="n">CL0</span>     <span class="n">constants</span> <span class="k">for</span> <span class="n">CL</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">M</span><span class="p">)</span> <span class="n">function</span>
+<span class="n">C</span>          <span class="n">DCLDA</span>
+<span class="n">C</span>          <span class="n">CLMIN</span>
+<span class="n">C</span>          <span class="n">CLMAX</span>
+<span class="n">C</span>          <span class="n">MCRIT</span>
+</pre></div>
+</div>
+<p>The output parameters are listed next:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span>  <span class="n">Output</span>  <span class="n">GAM</span>     <span class="n">circulation</span>
+<span class="n">C</span>          <span class="n">VA</span>      <span class="n">axial</span> <span class="n">induced</span> <span class="n">velocity</span>
+<span class="n">C</span>          <span class="n">VT</span>      <span class="n">tangential</span> <span class="n">induced</span> <span class="n">velocity</span>
+<span class="n">C</span>          <span class="n">CL</span>      <span class="n">section</span> <span class="n">lift</span> <span class="n">coefficient</span>
+<span class="n">C</span>          <span class="n">STALL</span>   <span class="n">T</span> <span class="k">if</span> <span class="n">alpha</span> <span class="ow">is</span> <span class="n">outside</span> <span class="n">stall</span> <span class="n">limits</span>
+<span class="n">C</span>          <span class="n">LCONV</span>   <span class="n">F</span> <span class="k">if</span> <span class="n">iteration</span> <span class="n">did</span> <span class="ow">not</span> <span class="n">converge</span>
+<span class="n">C</span>
+<span class="n">C</span>          <span class="p">()</span><span class="n">_VEL</span>  <span class="n">derivatives</span>  <span class="n">d</span><span class="p">()</span><span class="o">/</span><span class="n">dVEL</span>
+<span class="n">C</span>          <span class="p">()</span><span class="n">_OMG</span>  <span class="n">derivatives</span>  <span class="n">d</span><span class="p">()</span><span class="o">/</span><span class="n">dOMG</span>
+<span class="n">C</span>          <span class="p">()</span><span class="n">_CH</span>   <span class="n">derivatives</span>  <span class="n">d</span><span class="p">()</span><span class="o">/</span><span class="n">dCHORD</span>
+<span class="n">C</span>          <span class="p">()</span><span class="n">_BE</span>   <span class="n">derivatives</span>  <span class="n">d</span><span class="p">()</span><span class="o">/</span><span class="n">dBETA</span>
+</pre></div>
+</div>
+<p>From the theory doc, here are two figures that detail the velocity conponents
+around a secion of the propeller at a radius <strong>R</strong> from the axis:</p>
+<a class="reference internal image-reference" href="../_images/qprop-figure1a.png"><img alt="../_images/qprop-figure1a.png" src="../_images/qprop-figure1a.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/qprop-figure1b.png"><img alt="../_images/qprop-figure1b.png" src="../_images/qprop-figure1b.png" style="width: 400px;" /></a>
+<p>In these figures, these equations hold:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}W_a = V + u_a + v_a\\W_t = \Omega r -u_t -v_t\\W = \sqrt{W_a^2 + W_t^2}\end{aligned}\end{align} \]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><strong>V</strong> is the free-stream velocity (<strong>VEL</strong>)</p></li>
+<li><p><strong>r</strong> is the radial position of the blade section</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> is the rotation rate of the propeller (<strong>OMG</strong>)</p></li>
+</ul>
+<p>For our rubber powered models the values of <span class="math notranslate nohighlight">\(u_q\)</span> ns <span class="math notranslate nohighlight">\(u_t\)</span> are bith
+zero since they are related to  possible  upstream systems, like counter
+rotating propellers.</p>
+<p>The calculations are carried out for one specific radial position specified by
+the input <strong>R</strong> value. That means this routine will be called for each radial
+position ot complete the propeller analysis.</p>
+<div class="section" id="psi-iteration">
+<h2>Psi Iteration<a class="headerlink" href="#psi-iteration" title="Permalink to this headline">¶</a></h2>
+<p>The basic logic incolved performing a <em>Newton’s Iteration</em> to find the value of
+“math”<cite>Psi</cite> for this radial position. The input data provides the needed
+aerodynamic properties for the blade at this location.</p>
+<p><em>Newton’s method</em> assumes the existence of a function the describes the property
+needed (:math::<cite>Psi</cite>). We are interested in calculating the value of this
+function at a specified value of he dependent variable. We start with an
+initial guess for the solution and calculate the next solution based on the ratio of the function and its derivative at that initial point. The solution proceeds by repeating this calculation using the first result as the next guess. If the function is smooth and the initial guess is close enough, this scheme converges quickly.
+guess. Here is the scheme:</p>
+<div class="math notranslate nohighlight">
+\[x_1 = x_0 + \frac{f(x_o)}{f^`(x_0)}\]</div>
+<p>Successive guesses follow the same pattern:</p>
+<div class="math notranslate nohighlight">
+\[x_{n_1} = x_n + \frac{f(x_n)}{f^`(x_n)}\]</div>
+<p>The nitial guess is set as the maximum of these two values:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Psi_1 &amp;= atan2(u_a, u_t) \\
+\Psi_2 &amp;= \beta + Cl_0/DCLDA\end{split}\]</div>
+<p>Here is the complete source file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C***********************************************************************
 C    Module:  gvcalc.f
 C 
 C    Copyright (C) 2003 Mark Drela 
@@ -551,6 +674,7 @@ C
       END ! GVCALC
 
 </pre></div>
+</div>
 </div>
 </div>
 
